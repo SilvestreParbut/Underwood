@@ -3,7 +3,7 @@ procesador de texto enriquecido para la consola de linux (debian y derivados)
 
 Underwood se diferencia de los demás editores de texto para la terminal al poseer capacidad para negrita, cursiva, subrayado, salto de página, búsqueda y reemplao de palabras.
 
-Su formato nativo es .rtf, ya que es simple y altamente soportado por todos los procesadores de texto.
+Su formato nativo es .rtf, ya que es simple y altamente soportado por todos los procesadores de texto. Puede exportar como .pdf
 
 Se controla con teclado y ratón, el trackpad o rueda del mouse pueden hacer scroll en el contenido, el ratón o trackpad puede hacer click y arrastrar para seleccionar el texto.
 
