@@ -100,8 +100,3 @@ y este proyecto se adhiere a [Versionado Semántico](https://semver.org/lang/es/
 
 ### Notas
 - Esta versión es monolingüe (español).
-
-
-[2.1.0]: https://github.com/tu_usuario/underwood/compare/v2.0.0...v2.1.0
-[2.0.0]: https://github.com/tu_usuario/underwood/compare/v1.0.0...v2.0.0
-[1.0.0]: https://github.com/tu_usuario/underwood/releases/tag/v1.0.0
