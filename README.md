@@ -1,5 +1,7 @@
+<img width="654" height="413" alt="underwood_2 1" src="https://github.com/user-attachments/assets/633706f8-c6ae-47cb-aa15-1dd1230051eb" />
+
 # Underwood
-procesador de texto enriquecido para la consola de linux (debian y derivados)
+Es un procesador de texto enriquecido para la consola de linux (debian y derivados)
 
 Underwood se diferencia de los demás editores de texto para la terminal al poseer capacidad para negrita, cursiva, subrayado, salto de página, búsqueda y reemplao de palabras.
 
