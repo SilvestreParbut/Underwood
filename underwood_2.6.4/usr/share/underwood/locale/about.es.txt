@@ -1,0 +1,94 @@
+============================================================
+                    UNDERWOOD 2.6.0
+============================================================
+
+    Un procesador de textos para la terminal,
+    pensado para escritura creativa.
+
+    Creado por Silvestre Parbut
+    Septiembre de 2026
+
+    Licencia: GNU General Public License v3.0
+
+    Este es software libre: puedes usarlo, estudiarlo,
+    modificarlo y redistribuirlo bajo los términos de la
+    GNU GPL v3. Se distribuye SIN NINGUNA GARANTÍA, ni
+    siquiera la garantía implícita de comerciabilidad o
+    idoneidad para un propósito particular. Consulta el
+    archivo LICENSE del repositorio para el texto completo
+    de la licencia.
+
+
+------------------------------------------------------------
+QUÉ ES UNDERWOOD
+------------------------------------------------------------
+
+Underwood es un procesador de textos que vive en la
+terminal. No es un editor de código, ni una suite de
+oficina, ni un bloc de notas al uso. Está pensado para
+una cosa: escribir.
+
+Está diseñado para quienes escriben ficción, ensayo o
+cualquier texto largo, y prefieren la sencillez y la
+rapidez de la línea de comandos al peso y la distracción
+de los procesadores gráficos. Funciona en cualquier
+terminal moderna, incluso en equipos modestos como una
+Raspberry Pi o un servidor sin entorno gráfico, y es
+cómodo tanto con ratón como solo con teclado.
+
+
+------------------------------------------------------------
+QUÉ HACE
+------------------------------------------------------------
+
+- Escribe en texto enriquecido: negrita, cursiva,
+  subrayado y las cuatro alineaciones clásicas.
+
+- Organiza documentos largos con tres niveles de título
+  (capítulo, sección, subsección) y un mapa de capítulos
+  navegable para saltar entre ellos al instante.
+
+- Revisa la ortografía en español e inglés con hunspell,
+  subrayando en naranja las palabras dudosas y mostrando
+  sugerencias al pasar el cursor sobre ellas.
+
+- Abre y guarda en RTF, TXT y DOCX, y exporta a PDF,
+  reutilizando LibreOffice cuando hace falta.
+
+- Cambia de idioma sobre la marcha sin perder el trabajo.
+
+- Funciona con ratón y, si no lo hay, con teclado:
+  selección con Shift+flechas, menús con F9, todo
+  accesible desde una terminal limpia.
+
+
+------------------------------------------------------------
+QUÉ NO HACE
+------------------------------------------------------------
+
+Por decisión de diseño, Underwood no incluye:
+
+- tablas,
+- macros,
+- imágenes incrustadas,
+- hojas de estilo,
+- ni formato a nivel de página (márgenes, encabezados,
+  pies).
+
+Si necesitas algo de eso, hay herramientas mejores. La
+idea aquí es no estorbar.
+
+
+------------------------------------------------------------
+AGRADECIMIENTOS
+------------------------------------------------------------
+
+A todas las personas que escriben en la terminal por
+elección, y a quienes mantienen las herramientas libres
+que hacen posible un programa como este: Python, ncurses,
+hunspell y LibreOffice, entre muchas otras.
+
+
+============================================================
+    Gracias por usar Underwood. Feliz escritura.
+============================================================

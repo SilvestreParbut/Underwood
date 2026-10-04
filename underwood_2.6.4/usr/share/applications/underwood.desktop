@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Underwood
+GenericName=Procesador de textos
+GenericName[en]=Word processor
+Comment=Procesador de textos para la terminal
+Comment[en]=Terminal word processor
+Exec=underwood-xterm
+Terminal=false
+Categories=Office;WordProcessor;TextEditor;
+Keywords=writer;novel;text;editor;writing;
+Icon=underwood
+StartupNotify=false

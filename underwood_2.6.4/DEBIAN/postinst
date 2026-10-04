@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        if ! command -v hunspell >/dev/null 2>&1; then
+            echo ""
+            echo "Nota: Underwood funciona mejor con el corrector ortografico."
+            echo "Para activarlo, instala:"
+            echo "  sudo apt install hunspell hunspell-es hunspell-en-us"
+            echo ""
+        fi
+        if ! command -v libreoffice >/dev/null 2>&1 && \
+           ! command -v soffice >/dev/null 2>&1; then
+            echo "Para exportar a PDF o DOCX, instala LibreOffice:"
+            echo "  sudo apt install libreoffice-writer"
+            echo ""
+        fi
+        ;;
+esac
+
+exit 0

@@ -1,0 +1,345 @@
+============================================================
+                    UNDERWOOD MANUAL
+============================================================
+
+Underwood is a terminal word processor built for creative
+writing: novels, short stories, essays, scripts. It has no
+tables, no macros, no complex formatting. Just text, with
+everything you need to write comfortably.
+
+
+------------------------------------------------------------
+1. INTERFACE: MOUSE AND KEYBOARD
+------------------------------------------------------------
+
+Underwood works with a mouse: you can click the menus,
+select text by dragging, move the cursor with a click,
+and scroll with the wheel.
+
+If you are in an environment without a mouse (pure TTY,
+SSH, a Raspberry Pi with no desktop, etc.), press F9 to
+open the menu bar and navigate with the keyboard:
+
+  F9              Open / close the menu bar
+  ←  →            Change menu
+  ↑  ↓            Move through options
+  Enter           Run the selected option
+  Esc             Close the menu
+
+Below are the keyboard shortcuts grouped by function. All
+of them work in any terminal.
+
+
+  FILE
+    Ctrl+N        New document
+    Ctrl+O        Open document
+    Ctrl+S        Save
+    Ctrl+W        Save as…
+    Ctrl+P        Export to PDF
+    Ctrl+Q        Quit
+
+  EDIT
+    Ctrl+A        Select all
+    Ctrl+Z        Undo
+    Ctrl+C        Copy
+    Ctrl+X        Cut
+    Ctrl+V        Paste
+    Ctrl+F        Find
+    Ctrl+R        Replace
+    F7            Spell checker
+
+  FORMAT
+    Ctrl+B        Bold
+    Ctrl+I        Italic
+    Ctrl+U        Underline
+
+  ALIGNMENT
+    Ctrl+L        Left
+    Ctrl+E        Center
+    Ctrl+D        Right
+    Ctrl+J        Justify
+
+  CHAPTERS
+    F2            Chapter (level 1)
+    F3            Section (level 2)
+    F4            Subsection (level 3)
+    F6            Remove heading level
+    Ctrl+T        Chapter map
+    Ctrl+K        Page break
+
+  INTERFACE
+    F9            Open menu bar
+    Ctrl+G        This manual
+    Ctrl+H        About
+
+  KEYBOARD SELECTION (useful without a mouse)
+    Shift+←  →    Extend selection character by character
+    Shift+↑  ↓    Extend selection line by line
+    Shift+Home    Extend to the start of the line
+    Shift+End     Extend to the end of the line
+    Shift+PgUp    Extend one screen up
+    Shift+PgDn    Extend one screen down
+
+    With an active selection:
+      Ctrl+B/I/U    Bold / italic / underline
+      F2/F3/F4      Convert to chapter / section / subsection
+      F6            Remove heading level
+      Ctrl+C / X    Copy / cut
+      Backspace     Delete the selected text
+
+    Moving the cursor without Shift, or typing, cancels
+    the selection.
+
+
+------------------------------------------------------------
+2. THE BASICS
+------------------------------------------------------------
+
+Type normally. Move the cursor with the arrow keys. The
+usual keys work:
+
+  ←  →  ↑  ↓      Move the cursor
+  Home / End      Go to line start or end
+  Backspace       Delete previous character
+  Delete          Delete next character
+  Enter           New line
+  Ctrl+Z          Undo
+  Ctrl+A          Select all
+
+
+------------------------------------------------------------
+3. FORMATTING
+------------------------------------------------------------
+
+  Ctrl+B          Bold
+  Ctrl+I          Italic
+  Ctrl+U          Underline
+
+If there is a selection, the format is applied to it. If
+not, the format is toggled for what you type next. Press
+the same key again to turn it off.
+
+
+------------------------------------------------------------
+4. ALIGNMENT
+------------------------------------------------------------
+
+  Ctrl+L          Left
+  Ctrl+E          Center
+  Ctrl+D          Right
+  Ctrl+J          Justify
+
+Applies to the line the cursor is on, or to every line in
+the selection.
+
+
+------------------------------------------------------------
+5. CHAPTERS AND SECTIONS
+------------------------------------------------------------
+
+Underwood distinguishes three heading levels. This is the
+basis for organizing long projects.
+
+  F2              Chapter (level 1)
+  F3              Section (level 2)
+  F4              Subsection (level 3)
+  F6              Remove heading level
+
+Headings look like this:
+
+  Level 1: bold + underline    (▸ in the map)
+  Level 2: bold                (· in the map)
+  Level 3: bold + italic       (· in the map)
+
+If several lines are selected, the level is applied to all
+of them at once.
+
+When exporting to PDF or .docx, headings are written as
+real outline levels, so Word and LibreOffice recognize
+them (useful for generating a table of contents with page
+numbers from there).
+
+
+------------------------------------------------------------
+6. CHAPTER MAP (Ctrl+T)
+------------------------------------------------------------
+
+Shows every chapter, section and subsection in a panel,
+indented by level. It is the fastest way to see the whole
+structure of the document.
+
+Inside the map:
+
+  ↑  ↓            Move through the list
+  PgUp / PgDn     Jump one page
+  Home / End      Go to start or end
+  Enter           Jump to that chapter and close
+  n               Create a new chapter at the end
+                  (it stays selected so you can type)
+  Esc             Close without jumping
+
+With the mouse:
+
+  Click           Select that chapter
+  Second click    Jump and close
+  Wheel           Scroll the list
+
+
+------------------------------------------------------------
+7. FIND AND REPLACE
+------------------------------------------------------------
+
+  Ctrl+F          Find
+  Ctrl+R          Replace
+
+Type the term and press Enter. If there are several hits,
+each time you press Enter while the search is active you
+jump to the next one. The status bar shows the current
+position (for example "3/17").
+
+When replacing, type the term to find first, then the
+replacement. All occurrences are replaced at once.
+
+
+------------------------------------------------------------
+8. SPELL CHECKER
+------------------------------------------------------------
+
+  F7              Toggle on / off
+
+When active, misspelled words appear underlined in orange.
+Put the cursor over a marked word and suggestions will
+appear in the status bar.
+
+The spell checker uses the same language as the interface.
+Changing the language (Language menu) also switches the
+dictionary.
+
+Requires hunspell to be installed:
+
+  sudo apt install hunspell hunspell-es hunspell-en-us
+
+
+------------------------------------------------------------
+9. OPEN, SAVE AND EXPORT
+------------------------------------------------------------
+
+  Ctrl+N          New document
+  Ctrl+O          Open document
+  Ctrl+S          Save
+  Ctrl+W          Save as…
+  Ctrl+P          Export to PDF
+
+Supported formats:
+
+  .rtf    Native format (fast, keeps formatting)
+  .txt    Plain text (loses formatting)
+  .docx   Word document (uses LibreOffice underneath)
+  .doc    Legacy Word document
+  .pdf    Export only
+
+"Save as" asks only for the name. If you type "my novel",
+it saves to ~/underwood/my novel.rtf. If you type a path
+with "/", it is respected.
+
+"Save as .docx…" works the same but forces the .docx
+extension, showing an animation while LibreOffice
+converts the file.
+
+
+------------------------------------------------------------
+10. PAGE BREAK
+------------------------------------------------------------
+
+  Ctrl+K          Insert page break
+
+In the editor it appears as a thick horizontal line. When
+exported, it becomes a real page break.
+
+
+------------------------------------------------------------
+11. CLIPBOARD
+------------------------------------------------------------
+
+  Ctrl+C          Copy
+  Ctrl+X          Cut
+  Ctrl+V          Paste
+
+Underwood preserves formatting (bold, italic, etc.) when
+copying and pasting inside the program. If you paste from
+another application, it is pasted as plain text using the
+currently active format.
+
+
+------------------------------------------------------------
+12. LANGUAGE
+------------------------------------------------------------
+
+Menu Language → Español / English.
+
+The change is immediate: the current document is saved
+automatically and the program restarts with the new
+interface. The spell checker also switches dictionary.
+
+The preference is stored in ~/.config/underwood/language.
+
+
+------------------------------------------------------------
+13. TIPS FOR LONG PROJECTS
+------------------------------------------------------------
+
+- Mark every chapter with F2 from the start. Even if you
+  later change the text, the level stays and the map
+  always works.
+
+- Use the map (Ctrl+T) as an outline. Jump from chapter to
+  chapter without scrolling through page after page.
+
+- Save often with Ctrl+S. Underwood has no autosave; it is
+  up to you.
+
+- If you plan to export to PDF or .docx, check the heading
+  levels first. An unmarked chapter will not appear in
+  Word/LibreOffice's outline panel.
+
+- For quick notes, open a new document (Ctrl+N) and save
+  it under another name. Underwood has no tabs; each
+  window is one document.
+
+
+------------------------------------------------------------
+14. REQUIREMENTS AND INSTALLATION
+------------------------------------------------------------
+
+Underwood requires:
+
+  - Python 3.8 or later
+  - A terminal with color support (for the spell checker)
+  - hunspell (optional, for spelling)
+  - LibreOffice (optional, for PDF and .docx)
+
+On Debian / Ubuntu / Linux Mint:
+
+  sudo apt install python3 hunspell hunspell-es \
+                   hunspell-en-us libreoffice
+
+Run it:
+
+  python3 underwood.py
+
+Or if installed as a command:
+
+  underwood
+
+
+------------------------------------------------------------
+15. LICENSE
+------------------------------------------------------------
+
+Underwood is free software. See the LICENSE file in the
+repository for details.
+
+
+============================================================
+           Thanks for using Underwood. Happy writing.
+============================================================
