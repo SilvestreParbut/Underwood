@@ -1,6 +1,7 @@
-<img width="654" height="413" alt="underwood_2 1" src="https://github.com/user-attachments/assets/633706f8-c6ae-47cb-aa15-1dd1230051eb" />
+<img width="645" height="413" alt="underwood demo" src="https://github.com/user-attachments/assets/9d1aef4a-fccd-410c-9445-b7b04a4e911b" />
 
-# Underwood-English
+
+# Underwood - English
 
 It is a rich-text processor for the Linux console (Debian and derivatives). inspired by word processors such as WordPerfect and MS-Word 6.0 for DOS and the iconic Underwood Standard No. 5 typewriter
 
@@ -13,7 +14,7 @@ It is controlled via keyboard and mouse; the trackpad or mouse wheel can be used
 Licence: GNU GPL-v.3
 
 
-# Underwood-Español
+# Underwood - Español
 
 Underwood es un procesador de texto enriquecido para la consola de sistemas linux (debian y derivados) inspirado en procesadores de texto como wordperfect, MS-Word 6.0 para DOS y la icónica máquina de escribir underwood standard n°5
 
