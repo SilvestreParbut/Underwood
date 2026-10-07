@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+        has_lo=0
+        if command -v libreoffice >/dev/null 2>&1 || \
+           command -v soffice >/dev/null 2>&1; then
+            has_lo=1
+        fi
+        if [ "$has_lo" = "0" ] && command -v flatpak >/dev/null 2>&1; then
+            if flatpak info org.libreoffice.LibreOffice >/dev/null 2>&1; then
+                has_lo=1
+            fi
+        fi
+
+        if [ "$has_lo" = "0" ]; then
+            echo ""
+            echo "Nota: para exportar a PDF o DOCX, instala LibreOffice:"
+            echo "  sudo apt install libreoffice-writer"
+            echo "o, si prefieres Flatpak:"
+            echo "  flatpak install flathub org.libreoffice.LibreOffice"
+            echo ""
+        fi
+        ;;
+esac
+
+exit 0
