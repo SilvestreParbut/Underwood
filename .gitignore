@@ -1,0 +1,17 @@
+# Paquetes Debian generados
+*.deb
+*.ddeb
+*.changes
+*.buildinfo
+*.dsc
+
+# Caché de Python
+__pycache__/
+*.pyc
+
+# Basura del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de respaldo o pruebas (opcional)
+backup-*/

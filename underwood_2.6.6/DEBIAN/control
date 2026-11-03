@@ -1,0 +1,13 @@
+Package: underwood
+Version: 2.6.6
+Section: editors
+Priority: optional
+Architecture: all
+Depends: python3 (>= 3.8), xterm, fonts-dejavu-core, hunspell, hunspell-es, xclip, hunspell-en-us
+Recommends: libreoffice-writer
+Maintainer: Silvestre Parbut
+Homepage: https://github.com/SilvestreParbut/Underwood
+Description: A word processor for the terminal.
+ Underwood is a minimalist word processor for the terminal, designed for creative writing—novels, short stories, essays, and screenplays
+ It includes text formatting (bold, italics, underlining), three levels of headings with a chapter map, a spell checker (using Hunspell), search and replace, and export options for RTF, TXT, DOCX, and PDF
+ It supports mouse input, but can also be operated entirely via the keyboard: use Shift+arrow keys for selection, and the F9 key to access menus

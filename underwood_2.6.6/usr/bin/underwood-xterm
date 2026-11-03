@@ -1,0 +1,2 @@
+#!/bin/sh
+exec xterm -fa "DejaVu Sans Mono" -fs 14 -u8 -bw 5 -fullscreen -e underwood

@@ -1,0 +1,348 @@
+============================================================
+                    MANUAL DE UNDERWOOD
+============================================================
+
+Underwood es un procesador de textos para la terminal,
+pensado para escritura creativa: novelas, cuentos, ensayos,
+guiones. No tiene tablas, macros ni formatos complicados.
+Solo texto, con lo justo para escribir cómodamente.
+
+
+------------------------------------------------------------
+1. INTERFAZ: RATÓN Y TECLADO
+------------------------------------------------------------
+
+Underwood funciona con ratón: puedes hacer clic en los
+menús, seleccionar texto arrastrando, mover el cursor con
+un clic y desplazarte con la rueda.
+
+Si estás en un entorno sin ratón (TTY pura, SSH, Raspberry
+Pi sin escritorio, etc.), pulsa F9 para abrir la barra de
+menús y navega con el teclado:
+
+  F9              Abrir / cerrar la barra de menús
+  ←  →            Cambiar de menú
+  ↑  ↓            Moverse por las opciones
+  Enter           Ejecutar la opción seleccionada
+  Esc             Cerrar el menú
+
+A continuación tienes los atajos de teclado agrupados por
+función. Todos funcionan en cualquier terminal.
+
+
+  ARCHIVO
+    Ctrl+N        Nuevo documento
+    Ctrl+O        Abrir documento
+    Ctrl+S        Guardar
+    Ctrl+W        Guardar como…
+    Ctrl+P        Exportar a PDF
+    Ctrl+Q        Salir
+
+  EDICIÓN
+    Ctrl+A        Seleccionar todo
+    Ctrl+Z        Deshacer
+    Ctrl+C        Copiar
+    Ctrl+X        Cortar
+    Ctrl+V        Pegar
+    Ctrl+F        Buscar
+    Ctrl+R        Reemplazar
+    F7            Corrector ortográfico
+
+  FORMATO
+    Ctrl+B        Negrita
+    Ctrl+I        Cursiva
+    Ctrl+U        Subrayado
+
+  ALINEACIÓN
+    Ctrl+L        Izquierda
+    Ctrl+E        Centrada
+    Ctrl+D        Derecha
+    Ctrl+J        Justificada
+
+  CAPÍTULOS
+    F2            Capítulo (nivel 1)
+    F3            Sección (nivel 2)
+    F4            Subsección (nivel 3)
+    F6            Quitar nivel de título
+    Ctrl+T        Mapa de capítulos
+    Ctrl+K        Salto de página
+
+  INTERFAZ
+    F9            Abrir barra de menús
+    Ctrl+G        Este manual
+    Ctrl+H        Acerca de
+
+  SELECCIÓN CON TECLADO (útil sin ratón)
+    Shift+←  →    Extender la selección carácter a carácter
+    Shift+↑  ↓    Extender la selección línea a línea
+    Shift+Inicio  Extender hasta el inicio de la línea
+    Shift+Fin     Extender hasta el fin de la línea
+    Shift+RePág   Extender una pantalla hacia arriba
+    Shift+AvPág   Extender una pantalla hacia abajo
+
+    Con la selección activa:
+      Ctrl+B/I/U    Negrita / cursiva / subrayado
+      F2/F3/F4      Convertir a capítulo / sección / subsección
+      F6            Quitar nivel de título
+      Ctrl+C / X    Copiar / cortar
+      Retroceso     Borrar el texto seleccionado
+
+    Al mover el cursor sin Shift o al escribir, la
+    selección se cancela.
+
+
+------------------------------------------------------------
+2. LO BÁSICO
+------------------------------------------------------------
+
+Escribe con normalidad. El cursor se mueve con las flechas.
+Las teclas habituales funcionan:
+
+  ←  →  ↑  ↓      Mover el cursor
+  Inicio / Fin    Ir al principio o final de la línea
+  Retroceso       Borrar el carácter anterior
+  Supr            Borrar el carácter siguiente
+  Enter           Nueva línea
+  Ctrl+Z          Deshacer
+  Ctrl+A          Seleccionar todo
+
+
+------------------------------------------------------------
+3. FORMATO
+------------------------------------------------------------
+
+  Ctrl+B          Negrita
+  Ctrl+I          Cursiva
+  Ctrl+U          Subrayado
+
+Si hay texto seleccionado, el formato se aplica a la
+selección. Si no, se activa para lo que escribas a
+continuación. Vuelve a pulsar la misma tecla para
+desactivar.
+
+
+------------------------------------------------------------
+4. ALINEACIÓN
+------------------------------------------------------------
+
+  Ctrl+L          Izquierda
+  Ctrl+E          Centrada
+  Ctrl+D          Derecha
+  Ctrl+J          Justificada
+
+Afecta a la línea donde está el cursor, o a todas las
+líneas de la selección.
+
+
+------------------------------------------------------------
+5. CAPÍTULOS Y SECCIONES
+------------------------------------------------------------
+
+Underwood distingue tres niveles de título. Esto es la
+base para organizar proyectos largos.
+
+  F2              Capítulo (nivel 1)
+  F3              Sección (nivel 2)
+  F4              Subsección (nivel 3)
+  F6              Quitar nivel de título
+
+Los títulos se ven así:
+
+  Nivel 1: negrita + subrayado   (▸ en el mapa)
+  Nivel 2: negrita               (· en el mapa)
+  Nivel 3: negrita + cursiva     (· en el mapa)
+
+Si hay varias líneas seleccionadas, el nivel se aplica a
+todas a la vez.
+
+Al exportar a PDF o .docx, los títulos se envían como
+encabezados reales, así que Word y LibreOffice los
+reconocen (útil para generar una tabla de contenidos con
+números de página desde ahí).
+
+
+------------------------------------------------------------
+6. MAPA DE CAPÍTULOS (Ctrl+T)
+------------------------------------------------------------
+
+Muestra todos los capítulos, secciones y subsecciones en
+un panel, indentados por nivel. Es la forma más rápida de
+ver la estructura completa del documento.
+
+Dentro del mapa:
+
+  ↑  ↓            Mover por la lista
+  AvPág / RePág   Saltar de página
+  Inicio / Fin    Ir al principio o al final
+  Enter           Saltar a ese capítulo y cerrar
+  n               Crear un capítulo nuevo al final
+                  (queda seleccionado para escribir)
+  Esc             Cerrar sin saltar
+
+Con el ratón:
+
+  Clic            Selecciona ese capítulo
+  Segundo clic    Salta y cierra
+  Rueda           Sube o baja por la lista
+
+
+------------------------------------------------------------
+7. BUSCAR Y REEMPLAZAR
+------------------------------------------------------------
+
+  Ctrl+F          Buscar
+  Ctrl+R          Reemplazar
+
+Escribe el término y pulsa Enter. Si hay varias
+coincidencias, cada vez que pulses Enter con la búsqueda
+activa saltarás a la siguiente. El contador de la barra
+inferior te dice en cuál vas (por ejemplo "3/17").
+
+Al reemplazar, escribe primero el término a buscar y luego
+el de reemplazo. Se reemplazan todas las apariciones de
+una vez.
+
+
+------------------------------------------------------------
+8. CORRECTOR ORTOGRÁFICO
+------------------------------------------------------------
+
+  F7              Activar / desactivar
+
+Cuando está activo, las palabras mal escritas aparecen
+subrayadas en naranja. Pon el cursor sobre una palabra
+marcada y verás las sugerencias en la barra inferior.
+
+El corrector usa el mismo idioma que la interfaz. Al
+cambiar de idioma (menú Idioma) se cambia también el
+diccionario.
+
+Requiere tener instalado hunspell:
+
+  sudo apt install hunspell hunspell-es hunspell-en-us
+
+
+------------------------------------------------------------
+9. ABRIR, GUARDAR Y EXPORTAR
+------------------------------------------------------------
+
+  Ctrl+N          Nuevo documento
+  Ctrl+O          Abrir documento
+  Ctrl+S          Guardar
+  Ctrl+W          Guardar como…
+  Ctrl+P          Exportar a PDF
+
+Formatos soportados:
+
+  .rtf    Formato nativo (rápido, conserva el formato)
+  .txt    Texto plano (pierde el formato)
+  .docx   Documento de Word (usa LibreOffice por debajo)
+  .doc    Documento de Word antiguo
+  .pdf    Solo exportación
+
+"Guardar como" pide solo el nombre. Si escribes
+"mi novela", se guarda en ~/underwood/mi novela.rtf.
+Si escribes una ruta con "/", se respeta.
+
+"Guardar como .docx…" funciona igual pero fuerza la
+extensión .docx, mostrando una animación mientras
+LibreOffice convierte el archivo.
+
+
+------------------------------------------------------------
+10. SALTO DE PÁGINA
+------------------------------------------------------------
+
+  Ctrl+K          Insertar salto de página
+
+En el editor se ve como una línea horizontal gruesa. Al
+exportar, se convierte en un salto de página real.
+
+
+------------------------------------------------------------
+11. PORTAPAPELES
+------------------------------------------------------------
+
+  Ctrl+C          Copiar
+  Ctrl+X          Cortar
+  Ctrl+V          Pegar
+
+Underwood conserva el formato (negrita, cursiva, etc.) al
+copiar y pegar dentro del mismo programa. Si pegas desde
+otra aplicación, se pega como texto plano con el formato
+activo en ese momento.
+
+
+------------------------------------------------------------
+12. IDIOMA
+------------------------------------------------------------
+
+Menú Idioma → Español / English.
+
+El cambio es inmediato: se guarda el documento actual
+automáticamente y el programa se reinicia con la nueva
+interfaz. El corrector ortográfico también cambia de
+diccionario.
+
+La preferencia se guarda en ~/.config/underwood/language.
+
+
+------------------------------------------------------------
+13. CONSEJOS PARA PROYECTOS LARGOS
+------------------------------------------------------------
+
+- Marca cada capítulo con F2 desde el principio. Aunque
+  luego cambies el texto, el nivel queda y el mapa te
+  sirve siempre.
+
+- Usa el mapa (Ctrl+T) como índice. Salta de un capítulo
+  a otro sin desplazarte por páginas y páginas.
+
+- Guarda a menudo con Ctrl+S. Underwood no tiene
+  autoguardado; depende de ti.
+
+- Si vas a exportar a PDF o .docx, revisa primero los
+  niveles de título. Un capítulo sin marcar no aparecerá
+  en el panel de encabezados de Word/LibreOffice.
+
+- Para notas rápidas, abre un documento nuevo (Ctrl+N) y
+  guárdalo con otro nombre. Underwood no tiene pestañas;
+  cada ventana es un documento.
+
+
+------------------------------------------------------------
+14. REQUISITOS E INSTALACIÓN
+------------------------------------------------------------
+
+Underwood necesita:
+
+  - Python 3.8 o superior
+  - Terminal con soporte de colores (para el corrector)
+  - hunspell (opcional, para ortografía)
+  - LibreOffice (opcional, para PDF y .docx)
+
+En Debian / Ubuntu / Linux Mint:
+
+  sudo apt install python3 hunspell hunspell-es \
+                   hunspell-en-us libreoffice
+
+Ejecutar:
+
+  python3 underwood.py
+
+O si lo has instalado como comando:
+
+  underwood
+
+
+------------------------------------------------------------
+15. LICENCIA
+------------------------------------------------------------
+
+Underwood es software libre. Consulta el archivo LICENSE
+del repositorio para los detalles.
+
+
+============================================================
+           Gracias por usar Underwood. Feliz escritura.
+============================================================

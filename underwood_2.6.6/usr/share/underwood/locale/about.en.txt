@@ -1,0 +1,91 @@
+============================================================
+                    UNDERWOOD 2.6.0
+============================================================
+
+    A terminal word processor
+    built for creative writing.
+
+    Created by Silvestre Parbut
+    September 2026
+
+    License: GNU General Public License v3.0
+
+    This is free software: you can use it, study it,
+    modify it and redistribute it under the terms of the
+    GNU GPL v3. It is distributed WITHOUT ANY WARRANTY,
+    not even the implied warranty of merchantability or
+    fitness for a particular purpose. See the LICENSE file
+    in the repository for the full license text.
+
+
+------------------------------------------------------------
+WHAT UNDERWOOD IS
+------------------------------------------------------------
+
+Underwood is a word processor that lives in the terminal.
+It is not a code editor, not an office suite, and not a
+plain notepad. It is built for one thing: writing.
+
+It is designed for people who write fiction, essays, or
+any kind of long-form text, and who prefer the simplicity
+and speed of the command line over the weight and
+distraction of graphical word processors. It runs on any
+modern terminal, including modest machines such as a
+Raspberry Pi or a server with no desktop, and is
+comfortable both with a mouse and with keyboard alone.
+
+
+------------------------------------------------------------
+WHAT IT DOES
+------------------------------------------------------------
+
+- Writes rich text: bold, italic, underline and the four
+  classic alignments.
+
+- Organizes long documents with three heading levels
+  (chapter, section, subsection) and a navigable chapter
+  map for jumping between them instantly.
+
+- Checks spelling in Spanish and English using hunspell,
+  underlining doubtful words in orange and showing
+  suggestions when the cursor rests on them.
+
+- Opens and saves RTF, TXT and DOCX, and exports to PDF,
+  reusing LibreOffice when needed.
+
+- Switches language on the fly without losing your work.
+
+- Works with a mouse and, when there is none, with the
+  keyboard: selection with Shift+arrows, menus with F9,
+  everything reachable from a clean terminal.
+
+
+------------------------------------------------------------
+WHAT IT DOES NOT DO
+------------------------------------------------------------
+
+By design, Underwood does not include:
+
+- tables,
+- macros,
+- embedded images,
+- stylesheets,
+- or page-level formatting (margins, headers, footers).
+
+If you need any of that, other tools will serve you
+better. The point here is to stay out of the way.
+
+
+------------------------------------------------------------
+ACKNOWLEDGEMENTS
+------------------------------------------------------------
+
+To everyone who writes in the terminal by choice, and to
+those who maintain the free tools that make a program
+like this possible: Python, ncurses, hunspell and
+LibreOffice, among many others.
+
+
+============================================================
+    Thanks for using Underwood. Happy writing.
+============================================================
