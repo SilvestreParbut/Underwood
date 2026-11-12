@@ -2640,24 +2640,6 @@ def draw_editor(
     else:
         cursor_screen_x = text_x
 
-    if top <= cursor_y < bottom and 0 <= cursor_screen_x < width:
-        try:
-            cursor_attr = curses.A_REVERSE | curses_attr_for(typing_attrs)
-            if (cursor_line < len(document)
-                    and cursor_col < len(document[cursor_line])):
-                char = document[cursor_line][cursor_col]
-                if char == PAGE_BREAK:
-                    stdscr.addstr(cursor_y, cursor_screen_x, "━",
-                                  cursor_attr)
-                else:
-                    stdscr.addstr(cursor_y, cursor_screen_x, char,
-                                  cursor_attr)
-            else:
-                stdscr.addstr(cursor_y, cursor_screen_x, " ", cursor_attr)
-            stdscr.move(cursor_y, cursor_screen_x)
-        except curses.error:
-            pass
-
     if mode in ("search", "replace_find", "replace_with", "save_as",
                 "save_as_docx", "save_as_md"):
         label = prompt_label
@@ -3151,6 +3133,13 @@ def init_colors():
                                  curses.COLOR_BLACK)
             curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_BLACK)
 
+        # Par de colores para el cursor: negro sobre blanco (inverso real,
+        # sin depender de A_REVERSE que no siempre está disponible).
+        try:
+            curses.init_pair(9, curses.COLOR_BLACK, curses.COLOR_WHITE)
+        except Exception:
+            pass
+
         _COLORS_READY = True
     except Exception:
         _COLORS_READY = False
@@ -3197,7 +3186,15 @@ def _style_for_attrs(attrs):
 def editor(stdscr, initial_path=None):
     curses.raw()
     curses.noecho()
-    curses.curs_set(1)
+    # Intentar cursor de bloque (2); si el terminal no lo soporta,
+    # quedarse con el subrayado/normal (1).
+    try:
+        curses.curs_set(2)
+    except curses.error:
+        try:
+            curses.curs_set(1)
+        except curses.error:
+            pass
     curses.mousemask(0)
     enable_mouse_tracking()
 
