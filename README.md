@@ -4,7 +4,7 @@ A minimalist word processor for the terminal, designed for creative writing: nov
 
 ## Command line installer (multidistro)
 
-curl -fsSL https://github.com/SilvestreParbut/Underwood/main/install.sh | sudo bash
+curl -fsSL https://github.com/SilvestreParbut/Underwood/blob/main/underwood_2.6.7/install.sh | sudo bash
 
 ## Repository Structure
 
