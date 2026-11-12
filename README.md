@@ -1,6 +1,10 @@
 # Underwood
 
-A minimalist word processor for the terminal, designed for creative writing: novels, short stories, essays, and screenplays.
+A minimalist word processor for the terminal, designed for creative writing: novels, short stories, essays, and screenplays.Debian
+
+## Command line installer (multidistro)
+
+curl -fsSL https://github.com/SilvestreParbut/Underwood/main/install.sh | sudo bash
 
 ## Repository Structure
 
