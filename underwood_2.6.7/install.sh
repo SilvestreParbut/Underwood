@@ -2,7 +2,7 @@
 # install.sh — Instalador de Underwood desde GitHub
 #
 # Uso:
-#   curl -fsSL https://raw.githubusercontent.com/USUARIO/underwood/main/install.sh | sudo bash
+#   curl -fsSL https://github.com/SilvestreParbut/Underwood/blob/main/underwood_2.6.7/install.sh | sudo bash
 #
 # Variables opcionales:
 #   UNDERWOOD_GITHUB_USER   (default: USUARIO)
