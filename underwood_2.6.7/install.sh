@@ -1,19 +1,11 @@
 #!/usr/bin/env bash
 # install.sh — Instalador de Underwood desde GitHub
-#
-# Uso:
-#   curl -fsSL https://raw.githubusercontent.com/SilvestreParbut/Underwood/main/underwood_2.6.7/install.sh | sudo bash
-#
-# Variables opcionales:
-#   UNDERWOOD_GITHUB_USER   (default: USUARIO)
-#   UNDERWOOD_GITHUB_REPO   (default: underwood)
-#   UNDERWOOD_BRANCH        (default: main)
 
 set -euo pipefail
 
-GITHUB_USER="${UNDERWOOD_GITHUB_USER:-SilvestreParbut}"
-GITHUB_REPO="${UNDERWOOD_GITHUB_REPO:-Underwood}"
-BRANCH="${UNDERWOOD_BRANCH:-main}"
+GITHUB_USER="SilvestreParbut"
+GITHUB_REPO="Underwood"
+BRANCH="main"
 PKG_DIR="underwood_2.6.7"
 
 R='\033[0;31m'; G='\033[0;32m'; Y='\033[1;33m'; N='\033[0m'
@@ -65,12 +57,20 @@ command -v hunspell >/dev/null 2>&1 || command -v aspell >/dev/null 2>&1 || \
 TMPDIR="$(mktemp -d -t underwood-install-XXXXXX)"
 trap 'rm -rf "$TMPDIR"' EXIT
 
+# Intentar descargar usando la rama main, si falla, intentar con master
 URL="https://github.com/${GITHUB_USER}/${GITHUB_REPO}/archive/refs/heads/${BRANCH}.tar.gz"
 info "Descargando $URL ..."
-curl -fsSL "$URL" -o "$TMPDIR/u.tar.gz"
+if ! curl -fsSL "$URL" -o "$TMPDIR/u.tar.gz"; then
+    info "La rama 'main' falló, intentando con 'master'..."
+    BRANCH="master"
+    URL="https://github.com/${GITHUB_USER}/${GITHUB_REPO}/archive/refs/heads/${BRANCH}.tar.gz"
+    curl -fsSL "$URL" -o "$TMPDIR/u.tar.gz" || { err "No se pudo descargar el repositorio. ¿Es público?"; exit 1; }
+fi
+
 tar -xzf "$TMPDIR/u.tar.gz" -C "$TMPDIR"
-SRC="$(find "$TMPDIR" -maxdepth 1 -type d -name 'underwood-*' | head -n1)"
-[[ -z "$SRC" ]] && { err "No se pudo extraer el tarball"; exit 1; }
+# BUG ARREGLADO AQUÍ: buscar la carpeta con el nombre correcto (capital U)
+SRC="$(find "$TMPDIR" -maxdepth 1 -type d -name "${GITHUB_REPO}-*" | head -n1)"
+[[ -z "$SRC" ]] && SRC="$TMPDIR"
 
 # Localizar la carpeta que contiene usr/share/underwood/underwood.py
 if [[ -d "$SRC/$PKG_DIR/usr/share/underwood" ]]; then
